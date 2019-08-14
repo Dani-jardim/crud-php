@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script type = 'text/javascript' scr="apagar.js"> </script>
+  
+  <script type = 'text/javascript' src="js/apagar.js"> </script>
   <title>Lista de produtos</title>
 </head>      
 <body>
@@ -19,17 +20,15 @@
       include("conecta.php");
       $seleciona = $conexao->prepare("select * from usuarios order by id desc");
       $seleciona -> execute();
-      $resultado = $seleciona -> setFetchMode(PDO::FETCH_ASSOC);
-      $resultado = $seleciona ->fetchAll();
-      foreach ($resultado as $usuario) {
+      $resultados = $seleciona -> setFetchMode(PDO::FETCH_ASSOC);
+      $resultados = $seleciona ->fetchAll();
+      foreach ($resultados as $usuario) {
     ?>
     <tr>
       <td><?=$usuario["nome"]?></td>
       <td><?=$usuario["cpf"]?></td>
-      <td><a href="#" onClick="verifica(<?=$resultado["id"]?>)">Excluir</a></td>
-      <td><a href="editar.php?editaid=<?=$resultado["id"]?>">Editar</a></td>
-
-
+      <td><a href="editar_usuarios.php?editaid=<?=$usuario['id']?>">Editar</a></td>
+      <td><a href="#" onClick="verifica(<?=$usuario['id']?>)">Excluir</a></td>
     </tr>
     <?php }?>
   </table>
