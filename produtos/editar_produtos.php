@@ -7,7 +7,7 @@
   <title>Editar Produtos</title>
 </head>
 <body>
-  <h1>Editar Produtos</h1>
+  <h1>Editar Proodutos</h1>
   <?php
     include ("../banco/conecta.php");
     
