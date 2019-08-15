@@ -1,5 +1,5 @@
 <?php
-  include ("conecta.php");
+  include ("../banco/conecta.php");
 
   $recnome=$_GET["form_nome"];
   $reccpf=$_GET["form_cpf"];

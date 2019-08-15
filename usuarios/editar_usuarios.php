@@ -9,7 +9,7 @@
 <body>
   <h1>Editar usuários</h1>
   <?php
-    include ("conecta.php"); 
+    include ("../banco/conecta.php"); 
     
     $recid=$_GET["editaid"];
     $seleciona = $conexao->prepare("select * from usuarios where id=$recid");

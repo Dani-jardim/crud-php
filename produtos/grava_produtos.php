@@ -1,5 +1,5 @@
 <?php
-  include ("bd/conecta.php");
+  include ("../banco/conecta.php");
 
   $rectitulo=$_GET["form_titulo"];
   $recdisciplina=$_GET["form_disciplina"];
