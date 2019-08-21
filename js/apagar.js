@@ -9,3 +9,9 @@ function verificaprodutos(recidproduto) {
     window.location = "../produtos/excluir_produtos.php?idexcp=" + recidproduto
   }
 }
+
+function verificacompras(recidcompras) {
+  if (confirm("Você realmente quer excluir?")) {
+    window.location = "../comprar/excluir_compras.php?idexcc=" + recidcompras
+  }
+}

@@ -1,14 +1,14 @@
 <?php
   include ("../banco/conecta.php");
 
-  $recnome=$_GET["form_nome"];
-  $reccpf=$_GET["form_cpf"];
+  $rectitulo=$_GET["form_titulo"];
+  $recdisciplina=$_GET["form_disciplina"];
 
-  $seleciona = $conexao->prepare("insert into usuarios (nome, cpf) values ('$recnome', '$reccpf')");
+  $seleciona = $conexao->prepare("insert into produtos (id, titulo) values (' $id, $rectitulo)");
   $seleciona -> execute();
   $resultados = $seleciona -> setFetchMode(PDO::FETCH_ASSOC);
   $resultados = $seleciona ->fetchAll();
 
-  header ("location:lista_usuarios.php");
+  header ("location:lista_compras.php");
 
 ?>

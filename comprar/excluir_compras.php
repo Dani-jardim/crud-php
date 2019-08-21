@@ -1,12 +1,12 @@
 <?php
 include ("../banco/conecta.php");
 
-  $recid=$_GET["idexc"];
+  $recidcompras=$_GET["idexcc"];
 
-  $seleciona = $conexao->prepare("delete from usuarios where id=$recid");
+  $seleciona = $conexao->prepare("delete from compras where id=$recidcompras");
   $seleciona -> execute();
 
 
-  header ("location:lista_usuarios.php");
+  header ("location:lista_compras.php");
 
 ?>

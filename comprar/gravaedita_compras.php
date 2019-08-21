@@ -1,14 +1,16 @@
 <?php
+
   include ("../banco/conecta.php");
-
-  $recid=$_POST["fid"];
-  $recnome=$_POST["form_nome"];
-  $reccpf=$_POST["form_cpf"];
-
-  $seleciona = $conexao->prepare("update usuarios set nome='$recnome', cpf='$reccpf' where id=$recid");
-  $seleciona -> execute();
   
+  $recidcompras=$_POST["form_idcompras"];
+  $rectitulo=$_POST["form_titulo"];
+  $recdisciplina=$_POST["form_disciplina"];
+  $recvalor=$_POST["form_valor"];
+  $rec_dataregistro=$_POST["form_dataRegistro"];
 
-  header ("location:lista_usuarios.php");
+  $seleciona = $conexao->prepare("update compras set produtos_id ='$recidproduto' where compras.id ='$recidcompras'");
+  $seleciona -> execute();
+
+  header ("location:lista_compras.php");
 
 ?>
